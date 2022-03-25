@@ -1,16 +1,10 @@
 import {Canvas, useFrame} from '@react-three/fiber';
-import { PointerLockControls } from '@react-three/drei';
-import { useState, useRef } from 'react'
-import logo from './logo.svg'
 import './App.css'
 import {RotatingBox} from './RotatingBox.jsx';
 import {Floor} from './Floor.jsx';
 import {PlayerCamera} from './PlayerCamera.jsx';
 
 function App() {
-	let meshRef = useRef();
-
-  const [count, setCount] = useState(0)
 	
   return (
 		<div id="canvas-container">

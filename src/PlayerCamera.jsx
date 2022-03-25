@@ -5,8 +5,10 @@ import { PointerLockControls } from "@react-three/drei";
 export function PlayerCamera() {
 	const groupRef = useRef();
 	const controlRef = useRef();
+	const gunRef = useRef();
 	useFrame(({camera}) => {
 		if(keyboard.w) {
+			console.log(controlRef.current);
 			controlRef.current.moveForward(.1);
 		}
 		if(keyboard.s) {
@@ -22,6 +24,10 @@ export function PlayerCamera() {
 	return (
 		<group ref={groupRef}>
 			<PointerLockControls ref={controlRef}/>
+			<mesh ref={gunRef} position={[3, -2, 4]}>
+				<boxGeometry args={[1,1,4]} />
+				<meshStandardMaterial />
+			</mesh>
 		</group>
 	)
 }
